@@ -7,11 +7,51 @@ const images = [
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
 ];
 
+let index = 0
 const containerImg = document.querySelector("div .ms_container-img")
 
-const img = document.createElement("img")
+let img = document.createElement("img")
 img.classList.add("ms_img")
 
-img.setAttribute("src", "https://cdn.photographycourse.net/wp-content/uploads/2022/04/Portrait-vs-Landscape-Featured-Image-3.jpg");
+img.setAttribute("src", images[index]);
 
-containerImg.append(img)
+ 
+
+
+let i;
+
+for ( i = 0; i < images.length; i++){
+    console.log(i)
+    img = document.createElement("img")
+    img.classList.add("ms_img", "ms_d_n")
+    img.setAttribute("src", images[i]);
+    containerImg.append(img)
+}
+
+let imgmod = document.querySelector("img");
+imgmod.classList.add("ms_d_b");
+
+
+
+
+
+const nextButton = document.querySelector("#next"); 
+
+nextButton.addEventListener("click", function() {
+    imgmod.classList.remove("ms_d_b")
+
+    img.classList.add("ms_d_n")
+
+
+    img.setAttribute("src", images[index]);
+
+    img.classList.add("ms_d_b")
+
+    index++
+
+    if(index === images.length){
+        index = 0;
+    }
+});
+
+

@@ -13,3 +13,11 @@
     object-fit: contain;
     height: 90vh;
 }
+
+.ms_d_n{
+    display: none;
+}
+
+.ms_d_b{
+    display: block;
+}

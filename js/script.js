@@ -28,7 +28,7 @@ for ( i = 0; i < images.length; i++){
     containerImg.append(img)
 }
 
-let imgmod = document.querySelector("img");
+let imgmod = document.querySelector(".ms_container-img img");
 imgmod.classList.add("ms_d_b");
 
 
@@ -53,5 +53,26 @@ nextButton.addEventListener("click", function() {
         index = 0;
     }
 });
+
+
+const previousButton = document.querySelector("#previous"); 
+
+previousButton.addEventListener("click", function() {
+    imgmod.classList.remove("ms_d_b")
+
+    img.classList.add("ms_d_n")
+
+    index--
+
+    if(index === -1){
+        index = images.length - 1;
+    }
+
+    img.setAttribute("src", images[index]);
+
+    img.classList.add("ms_d_b")
+
+}); 
+ 
 
 
